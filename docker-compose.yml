@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+    amplify:
+        build: ./
+        ports:
+            - "3000:3000"
+            - "20002:20002"
+        volumes:
+            - ~/dev/AmplifyDemo:/var/www/AmplifyDemo
+            # :より左は自分の環境に合わせる（credential, config をこのあとの作業で入れるor入る）
+            - ~/dev/AmplifyDemo/aws/:/root/.aws/
+        tty: true
